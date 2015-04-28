@@ -26,8 +26,9 @@
 int ticks = 663;                          // number of ticks per wheel revolution                         
 int heartBeatChar = '@';
 
-SoftwareSerial mySerial(10, 11);         // SoftwareSerial object for motors: RX, TX
+SoftwareSerial mySerial(10, 11);          // SoftwareSerial object for motors: RX, TX
 
+// Initialization function
 void setup() {
   // Make the program wait 2s
   delay(2000);
@@ -40,11 +41,11 @@ void setup() {
   
   // Initialize left motor (1) by starting it and give ticks
   // printIn accepts any data type as input and converts it to ASCII
-  mySerial.println("1,start");
+  mySerial.println("1, start");
   mySerial.println("1, units 1000 = 663");
 
   // Initialize right motor (2) by starting it and give ticks
-  mySerial.println("2,start");
+  mySerial.println("2, start");
   mySerial.println("2, units 1000 = 663");
   
   // Make the program wait 2s
@@ -71,12 +72,9 @@ void setup() {
 }
 
 void loop() {
-  // Get commands only if hardware serial port availaible
+  // Only if hardware serial port sends bytes (received commands)
   if(Serial.available())
-  {
-    // Update last update time
-    lastUpdateTime = millis();
-    
+  {    
     // Read first byte (first character) in RX pin of hardware serial port
     int firstChar = Serial.read();
     
@@ -94,7 +92,7 @@ void loop() {
       int rightSpeed = Serial.parseInt();
       if(rightSign == '-') rightSpeed = -rightSpeed;
         
-      // Read char to skip
+      // Empty buffer
       Serial.read();
       
       // Test if connection is working
