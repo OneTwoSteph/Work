@@ -9,7 +9,7 @@ int heartBeatChar = '@';
 int heartBeatTimeout = 500;
 //bool flag=false;
 int midBoundary = 16384;
-bool useOdometry = false;
+bool useOdometry = true; // TRUE IF USING ODOMETRY!
 
 int lastLeftPosition = 0;
 int currentLeftPosition = 0;
@@ -25,17 +25,17 @@ AltSoftSerial mySerial; // RX, TX
 
 void setup() {
   delay(300); 
-  Serial.begin(38400);
+  Serial.begin(9600);
   delay(300);
-  mySerial.begin(38400);
+  mySerial.begin(9600);
   delay(300);
   
   mySerial.println("1,start");
-  mySerial.println("1, units 1000 = 1856");
+  mySerial.println("1, units 1000 = 480");
   //mySerial.println("1,powerdown");
   
   mySerial.println("2,start");
-  mySerial.println("2, units 1000 = 1856");
+  mySerial.println("2, units 1000 = 480");
   //mySerial.println("2,powerdown");
   //delay(2000);
   /*
@@ -129,7 +129,7 @@ if(mySerial.available() > 0)
       }
       else if(motor == '2')
       {
-        Serial.print(String(GetIncrement(lastLeftPosition, currentLeftPosition)) + '*' + String(GetIncrement(lastRightPosition, number)) + '\n');
+        Serial.print(String(millis()) + String(" ") + String(GetIncrement(lastLeftPosition, currentLeftPosition)) + '*' + String(GetIncrement(lastRightPosition, number)) + '\n');
         //Serial.print(" @ " + String(currentLeftPosition) + '*' + String(number) + '\n');
         
         //long curr = millis();
@@ -189,11 +189,8 @@ if(mySerial.available() > 0)
           
         //read char to skip
         int charIn;
-        do
-        {
-          charIn = Serial.read();
-         }
-        while(charIn != '\n' && charIn > 0);
+      
+          Serial.readString();
         
         mySerial.println(String("1, s") + leftSpeed);
         mySerial.println(String("2, s") + rightSpeed);
@@ -205,7 +202,8 @@ if(mySerial.available() > 0)
     else
       lastUpdateTime = millis();
   }
-  else
+  // with this code, motors stopped initially
+/*  else
   {
       //windows program may have crashed...
       //stop the robot
@@ -214,6 +212,6 @@ if(mySerial.available() > 0)
         mySerial.println("1, s0");
         mySerial.println("2, s0");
       }
-  }
+  }*/
 }
 

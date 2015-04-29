@@ -43,8 +43,9 @@ void loop() {
   
   if((counter > 10) && (bytes >0))
   {
-    String wtf = mySerial.readString();
-    Serial.println(wtf);
+    //int wtf = mySerial.parseInt();
+    char wtf = mySerial.read();
+    Serial.println(String("received : ") + String(wtf));
   }
   
   counter++;
