@@ -29,7 +29,7 @@
  !!!  The sign of the speeds has to be given before their value.
  
  String format of odometry received :
- units (1000 = value) leftincrement * rightincrement
+ units/ticks (1000 = value) time leftincrement rightincrement
  */
 
 
