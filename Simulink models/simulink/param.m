@@ -6,6 +6,11 @@ clear all;
 close all;
 clc;
 
+% Robots initial position
+xinit = 0;             % x coordinate [m]
+yinit = 0;             % y coordinate [m]
+thetainit = 0;         % theta angle [rad]
+
 % Goal position
 xr = 0;                % x coordinate [m]
 yr = 0;                % y coordinate [m]

@@ -6,12 +6,14 @@ close all;
 clc
 
 %% Paramaters
+plotvar = true;
+
 K1 = 1.35;
 K2 = 4.6;
 
 dt = 0.05;              % sample time [s]
 
-q0 = [0; 0; pi];        % initial state [x, y, theta], theta in ]-pi, pi]
+q0 = [0; 0; 0];        % initial state [x, y, theta], theta in ]-pi, pi]
 qr = [10; 10; pi/2];    % goal state [x, y, theta]
 
 goal_color = [1,0,0; 0,0,0];
@@ -51,53 +53,56 @@ ylabel('y position [m]');
 % Draw goal pose
 state_arrow(qr, 1, fig, goal_color);
 
-% Initialize z plot figure
-zplotfig = figure();
+% Plotting
+if(plotvar)
+    % Initialize z plot figure
+    zplotfig = figure();
 
-subplot(4,1,1);
-hold on;
-box;
-grid on;
-xlabel('time [s]');
-ylabel('a [m]');
+    subplot(4,1,1);
+    hold on;
+    box;
+    grid on;
+    xlabel('time [s]');
+    ylabel('a [m]');
 
-subplot(4,1,2);
-hold on;
-box;
-grid on;
-xlabel('time [s]');
-ylabel('alpha [rad]');
+    subplot(4,1,2);
+    hold on;
+    box;
+    grid on;
+    xlabel('time [s]');
+    ylabel('alpha [rad]');
 
-subplot(4,1,3);
-hold on;
-box;
-grid on;
-xlabel('time [s]');
-ylabel('b1 [m^-1]');
+    subplot(4,1,3);
+    hold on;
+    box;
+    grid on;
+    xlabel('time [s]');
+    ylabel('b1 [m^-1]');
 
-subplot(4,1,4);
-hold on;
-box;
-grid on;
-xlabel('time [s]');
-ylabel('b2 [-]');
+    subplot(4,1,4);
+    hold on;
+    box;
+    grid on;
+    xlabel('time [s]');
+    ylabel('b2 [-]');
 
-% Initialize commands plot figure
-cplotfig = figure();
+    % Initialize commands plot figure
+    cplotfig = figure();
 
-subplot(2,1,1);
-hold on;
-box;
-grid on;
-xlabel('time [s]');
-ylabel('v [m/s]');
+    subplot(2,1,1);
+    hold on;
+    box;
+    grid on;
+    xlabel('time [s]');
+    ylabel('v [m/s]');
 
-subplot(2,1,2);
-hold on;
-box;
-grid on;
-xlabel('time [s]');
-ylabel('w [rad/s]');
+    subplot(2,1,2);
+    hold on;
+    box;
+    grid on;
+    xlabel('time [s]');
+    ylabel('w [rad/s]');
+end
 
 % One loop represents one dt
 while((abs(qe(1))>eps1) || (abs(qe(2))>eps1) || (abs(qe(3))>eps2))
@@ -132,18 +137,6 @@ while((abs(qe(1))>eps1) || (abs(qe(2))>eps1) || (abs(qe(3))>eps2))
     
     B = J(qe(1), qe(2), thetad)*T(qr(3))*G(q(3));
     
-    % Plot z state
-    set(0,'CurrentFigure', zplotfig);
-    subplot(4,1,1);
-    plot(timer*dt, a, '.r');
-    subplot(4,1,2);
-    plot(timer*dt, alpha, '.r');
-    subplot(4,1,3);
-    plot(timer*dt, B(1,1), '.r');
-    subplot(4,1,4);
-    plot(timer*dt, B(2,1), '.r');
-    drawnow;
-    
     % Compute commands
     if((r==0) && (thetad==0) && (timer==0))
         v = 1;
@@ -152,18 +145,35 @@ while((abs(qe(1))>eps1) || (abs(qe(2))>eps1) || (abs(qe(3))>eps2))
     end
     w = -B(2,1)*v - K2*alpha;
     
-    % Plot commands
-    set(0,'CurrentFigure', cplotfig);
-    subplot(2,1,1);
-    plot(timer*dt, v, '.r');
-    subplot(2,1,2);
-    plot(timer*dt, w, '.r');
-    drawnow;
+    
     
     % Compute next position
     q(1) = q(1) + dt*cos(q(3))*v;
     q(2) = q(2) + dt*sin(q(3))*v;
     q(3) = q(3) + dt*w;
+    
+    % Plotting
+    if(plotvar)
+        % Plot z state
+        set(0,'CurrentFigure', zplotfig);
+        subplot(4,1,1);
+        plot(timer*dt, a, '.r');
+        subplot(4,1,2);
+        plot(timer*dt, alpha, '.r');
+        subplot(4,1,3);
+        plot(timer*dt, B(1,1), '.r');
+        subplot(4,1,4);
+        plot(timer*dt, B(2,1), '.r');
+        drawnow;
+        
+        % Plot commands
+        set(0,'CurrentFigure', cplotfig);
+        subplot(2,1,1);
+        plot(timer*dt, v, '.r');
+        subplot(2,1,2);
+        plot(timer*dt, w, '.r');
+        drawnow;
+    end
     
     % Update timer
     timer = timer + 1;

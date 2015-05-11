@@ -2,7 +2,7 @@ Library {
   Name			  "simiam"
   Version		  8.0
   MdlSubVersion		  0
-  SavedCharacterEncoding  "UTF-8"
+  SavedCharacterEncoding  "windows-1252"
   LibraryType		  "BlockLibrary"
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [436.0, 33.0, 1058.0, 704.0]
+      Location		      [430.0, 95.0, 1058.0, 704.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -36,16 +36,28 @@ Library {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Object {
-	$PropName		"EditorsInfo"
-	$ObjectID		5
-	$ClassName		"Simulink.EditorInfo"
-	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1002.0, 532.0]
-	ZoomFactor		[1.25]
-	Offset			[-33.554691523676922, 1.8688394640464878]
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  5
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [1006.0, 533.0]
+	  ZoomFactor		  [1.25]
+	  Offset		  [23.799999999999997, 30.799999999999997]
+	}
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "8"
+	  Extents		  [1006.0, 533.0]
+	  ZoomFactor		  [1.25]
+	  Offset		  [0.0, 0.0]
+	}
+	PropName		"EditorsInfo"
       }
     }
   }
@@ -53,11 +65,11 @@ Library {
   Creator		  "jdelacroix"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "jdelacroix"
+  LastModifiedBy	  "samati"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 10 23:32:29 2013"
-  RTWModifiedTimeStamp	  287526931
-  ModelVersionFormat	  "1.%<AutoIncrement:9>"
+  LastModifiedDate	  "Mon May 11 15:23:25 2015"
+  RTWModifiedTimeStamp	  353258513
+  ModelVersionFormat	  "1.%<AutoIncrement:10>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -125,13 +137,13 @@ Library {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      6
+      $ObjectID		      7
       Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  7
+	  $ObjectID		  8
 	  Version		  "1.12.1"
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
@@ -166,7 +178,7 @@ Library {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  8
+	  $ObjectID		  9
 	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -198,7 +210,7 @@ Library {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  9
+	  $ObjectID		  10
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -254,7 +266,7 @@ Library {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -344,7 +356,7 @@ Library {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -381,7 +393,7 @@ Library {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -396,7 +408,7 @@ Library {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -411,7 +423,7 @@ Library {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
@@ -474,7 +486,7 @@ Library {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      15
+	      $ObjectID		      16
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -541,7 +553,7 @@ Library {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      16
+	      $ObjectID		      17
 	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
@@ -756,7 +768,7 @@ Library {
   }
   System {
     Name		    "simiam"
-    Location		    [436, 33, 1494, 737]
+    Location		    [430, 95, 1488, 799]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -781,7 +793,7 @@ Library {
       FunctionName	      "msfun_ir_distances_to_wf"
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		17
+	$ObjectID		18
 	$ClassName		"Simulink.Mask"
 	Display			"port_label('input', 1, 'x')\nport_label('input', 2, 'y')\nport_label('input', 3, 'theta')\nport_label('inp"
 	"ut', 4, 'ir_raw')\nport_label('output', 1, 'ir_wf')"
@@ -798,7 +810,7 @@ Library {
       Parameters	      "x_0,y_0,theta_0"
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		18
+	$ObjectID		19
 	$ClassName		"Simulink.Mask"
 	Type			"Khepera3"
 	Display			"port_label('output', 1, 'ir_raw')\nport_label('output', 2, 'wheel_ticks')\nport_label('input', 1, 'vel_r')"
@@ -807,7 +819,7 @@ Library {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  4
 	  Object {
-	    $ObjectID		    19
+	    $ObjectID		    20
 	    Type		    "edit"
 	    Name		    "x_0"
 	    Prompt		    "x_0"
@@ -815,7 +827,7 @@ Library {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    20
+	    $ObjectID		    21
 	    Type		    "edit"
 	    Name		    "y_0"
 	    Prompt		    "y_0"
@@ -823,7 +835,7 @@ Library {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    21
+	    $ObjectID		    22
 	    Type		    "edit"
 	    Name		    "theta_0"
 	    Prompt		    "theta_0"
@@ -831,7 +843,7 @@ Library {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    22
+	    $ObjectID		    23
 	    Type		    "edit"
 	    Name		    "robot_id"
 	    Prompt		    "ID"
@@ -858,15 +870,15 @@ Library {
       MaskHideContents	      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		23
+	$ObjectID		24
 	$ClassName		"Simulink.Mask"
 	Display			"port_label('input', 1, 'x')\nport_label('input', 2, 'y')\nport_label('input', 3, 'theta')\nport_label('out"
 	"put', 1, 'x')\nport_label('output', 2, 'y')\nport_label('output', 3, 'theta')"
       }
       System {
 	Name			"Pose2D"
-	Location		[446, 67, 1484, 727]
-	Open			off
+	Location		[430, 95, 1488, 799]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -910,6 +922,7 @@ Library {
 	  SID			  "5"
 	  Position		  [70, 20, 100, 50]
 	  ZOrder		  4
+	  X0			  "xinit"
 	  InheritSampleTime	  on
 	  StateIdentifier	  "state_estimate_x"
 	}
@@ -919,6 +932,7 @@ Library {
 	  SID			  "6"
 	  Position		  [70, 75, 100, 105]
 	  ZOrder		  5
+	  X0			  "yinit"
 	  InheritSampleTime	  on
 	  StateIdentifier	  "state_estimate_y"
 	}
@@ -928,6 +942,7 @@ Library {
 	  SID			  "7"
 	  Position		  [70, 130, 100, 160]
 	  ZOrder		  6
+	  X0			  "thetainit"
 	  InheritSampleTime	  on
 	  StateIdentifier	  "state_estimate_theta"
 	}
@@ -1005,7 +1020,7 @@ Library {
       FunctionName	      "msfun_simiam_ui"
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		24
+	$ObjectID		25
 	$ClassName		"Simulink.Mask"
 	Type			"Simulator"
 	Display			"image(imread('simulink/simiam-round-logo.png'))"
@@ -1022,7 +1037,7 @@ Library {
       Parameters	      "wheel_radius,wheel_base_length,ticks_per_rev"
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		25
+	$ObjectID		26
 	$ClassName		"Simulink.Mask"
 	Display			"port_label('input', 1, 'x')\nport_label('input', 2, 'y')\nport_label('input', 3, 'theta')\nport_label('inp"
 	"ut', 4, 'wheel_ticks')\nport_label('output', 1, 'x')\nport_label('output', 2, 'y')\nport_label('output', 3, 'theta')"
@@ -1030,7 +1045,7 @@ Library {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  3
 	  Object {
-	    $ObjectID		    26
+	    $ObjectID		    27
 	    Type		    "edit"
 	    Name		    "wheel_radius"
 	    Prompt		    "wheel_radius"
@@ -1038,7 +1053,7 @@ Library {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    27
+	    $ObjectID		    28
 	    Type		    "edit"
 	    Name		    "wheel_base_length"
 	    Prompt		    "wheel_base_length"
@@ -1046,7 +1061,7 @@ Library {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    28
+	    $ObjectID		    29
 	    Type		    "edit"
 	    Name		    "ticks_per_rev"
 	    Prompt		    "ticks_per_rev"
@@ -1068,7 +1083,7 @@ Library {
       Parameters	      "wheel_radius,wheel_base_length"
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		29
+	$ObjectID		30
 	$ClassName		"Simulink.Mask"
 	Display			"port_label('output', 1, 'vel_r')\nport_label('output', 2, 'vel_l')\nport_label('input', 1, 'v')\nport_labe"
 	"l('input', 2, 'w')"
@@ -1076,7 +1091,7 @@ Library {
 	  Type			  "Simulink.MaskParameter"
 	  Dimension		  2
 	  Object {
-	    $ObjectID		    30
+	    $ObjectID		    31
 	    Type		    "edit"
 	    Name		    "wheel_radius"
 	    Prompt		    "wheel_radius"
@@ -1084,7 +1099,7 @@ Library {
 	    Tunable		    "off"
 	  }
 	  Object {
-	    $ObjectID		    31
+	    $ObjectID		    32
 	    Type		    "edit"
 	    Name		    "wheel_base_length"
 	    Prompt		    "wheel_base_length"
