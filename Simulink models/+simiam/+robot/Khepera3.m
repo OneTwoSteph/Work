@@ -106,6 +106,9 @@ classdef Khepera3 < simiam.robot.Robot
             
             obj.right_wheel_speed = 0;
             obj.left_wheel_speed = 0;
+            
+            % Show robot created
+            obj
         end
         
         function ir_distances = get_ir_distances(obj)

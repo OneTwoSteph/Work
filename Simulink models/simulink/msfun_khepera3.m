@@ -10,6 +10,8 @@ function msfun_khepera3(block)
 %%
 robot = [];
 
+nbticks = 0;
+
 setup(block);
 
 %% Function: setup ===================================================
@@ -164,7 +166,6 @@ setup(block);
 %         robot = customData('robotHandle');
         
         block.OutputPort(1).Data = robot.ir_array.get_range();
-        robot.encoders.ticks
         block.OutputPort(2).Data = [robot.encoders.ticks];
         
     end %end Outputs
@@ -177,7 +178,6 @@ setup(block);
 %%   C-MEX counterpart: mdlUpdate
 %%
     function Update(block)
-        
 %         customData = get(block.BlockHandle, 'UserData');
 %         robot = customData('robotHandle');
         
