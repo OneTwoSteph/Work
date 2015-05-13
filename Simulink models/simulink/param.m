@@ -9,13 +9,13 @@ close all;
 clc;
 
 % Robots initial position
-xinit = 0;                          % x coordinate [m]
-yinit = 0;                          % y coordinate [m]
-thetainit = 0;                      % theta angle [rad]
+xi = 0;                             % x coordinate [m]
+yi = 0;                             % y coordinate [m]
+thetai = 0;                         % theta angle [rad]
 
 % Goal position
-xr = 0;                             % x coordinate [m]
-yr = 0;                             % y coordinate [m]
+xr = 1;                             % x coordinate [m]
+yr = 1;                             % y coordinate [m]
 thetar = pi;                        % theta angle [rad]
 
 % Geometry
@@ -24,13 +24,13 @@ r = 0.0205;                         % wheel radius [m]
 ticks = 2764;                       % number of ticks per wheel revolution [-]
 
 % Controller
-K1 = 1.35;
-K2 = 4.6;
+k1 = 0.6;
+k2 = 3.5;
 
 % Tolerances
 eps = 1e-6;                         % tolerance on small position [m]
-eps1 = 0.05;                        % position tolerance [m]
-eps2 = 2*pi*5/360;                  % angle tolerance [rad]
+eps1 = 0.005;                       % position tolerance [m]
+eps2 = 1*2*pi/360;                  % angle tolerance [rad]
 
 % Other informations
 max_phi = 48000*6.9440e-06/r;       % max wheel speed [rad/s]

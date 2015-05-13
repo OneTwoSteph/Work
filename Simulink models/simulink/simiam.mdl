@@ -56,9 +56,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "samati"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue May 12 11:41:15 2015"
-  RTWModifiedTimeStamp	  353331671
-  ModelVersionFormat	  "1.%<AutoIncrement:13>"
+  LastModifiedDate	  "Wed May 13 11:28:59 2015"
+  RTWModifiedTimeStamp	  353417335
+  ModelVersionFormat	  "1.%<AutoIncrement:14>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -867,7 +867,7 @@ Library {
       }
       System {
 	Name			"Pose2D"
-	Location		[-8, -8, 1928, 1168]
+	Location		[430, 95, 1488, 799]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -912,7 +912,7 @@ Library {
 	  SID			  "5"
 	  Position		  [70, 20, 100, 50]
 	  ZOrder		  4
-	  X0			  "xinit"
+	  X0			  "xi"
 	  InheritSampleTime	  on
 	  StateIdentifier	  "state_estimate_x"
 	}
@@ -922,7 +922,7 @@ Library {
 	  SID			  "6"
 	  Position		  [70, 75, 100, 105]
 	  ZOrder		  5
-	  X0			  "yinit"
+	  X0			  "yi"
 	  InheritSampleTime	  on
 	  StateIdentifier	  "state_estimate_y"
 	}
@@ -932,7 +932,7 @@ Library {
 	  SID			  "7"
 	  Position		  [70, 130, 100, 160]
 	  ZOrder		  6
-	  X0			  "thetainit"
+	  X0			  "thetai"
 	  InheritSampleTime	  on
 	  StateIdentifier	  "state_estimate_theta"
 	}

@@ -14,7 +14,7 @@ K2 = 4.6;
 dt = 0.05;              % sample time [s]
 
 q0 = [0; 0; 0];        % initial state [x, y, theta], theta in ]-pi, pi]
-qr = [10; 10; pi/2];    % goal state [x, y, theta]
+qr = [1; 1; pi];       % goal state [x, y, theta]
 
 goal_color = [1,0,0; 0,0,0];
 robot_color = [0,0,1; 0,0,0];
@@ -144,8 +144,6 @@ while((abs(qe(1))>eps1) || (abs(qe(2))>eps1) || (abs(qe(3))>eps2))
         v = -K1*B(1,1)*a;
     end
     w = -B(2,1)*v - K2*alpha;
-    
-    
     
     % Compute next position
     q(1) = q(1) + dt*cos(q(3))*v;
