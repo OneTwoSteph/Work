@@ -9,13 +9,13 @@ close all;
 clc;
 
 % Robots initial position
-xi = 0;                             % x coordinate [m]
-yi = 0;                             % y coordinate [m]
+xi = 1;                             % x coordinate [m]
+yi = 1;                             % y coordinate [m]
 thetai = 0;                         % theta angle [rad]
 
 % Goal position
-xr = 1;                             % x coordinate [m]
-yr = 1;                             % y coordinate [m]
+xr = 0;                             % x coordinate [m]
+yr = 0;                             % y coordinate [m]
 thetar = pi;                        % theta angle [rad]
 
 % Geometry
@@ -24,8 +24,8 @@ r = 0.0205;                         % wheel radius [m]
 ticks = 2764;                       % number of ticks per wheel revolution [-]
 
 % Controller
-k1 = 0.6;
-k2 = 3.5;
+k1 = 1.35/5;
+k2 = 4.6/5;
 
 % Tolerances
 eps = 1e-6;                         % tolerance on small position [m]

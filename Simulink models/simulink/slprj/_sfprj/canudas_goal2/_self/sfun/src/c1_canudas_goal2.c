@@ -290,7 +290,7 @@ static void sf_c1_canudas_goal2(SFc1_canudas_goal2InstanceStruct *chartInstance)
   sf_debug_symbol_scope_add_eml_importable(&c1_r, 7U, c1_sf_marshallOut,
     c1_sf_marshallIn);
   CV_EML_FCN(0, 0);
-  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 6);
+  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 9);
   c1_eps(chartInstance);
   c1_x = c1_qe[0];
   c1_b_x = c1_x;
@@ -304,7 +304,7 @@ static void sf_c1_canudas_goal2(SFc1_canudas_goal2InstanceStruct *chartInstance)
     if (CV_EML_COND(0, 1, 1, c1_b_y == 2.2204460492503131E-16)) {
       CV_EML_MCDC(0, 1, 0, TRUE);
       CV_EML_IF(0, 1, 0, TRUE);
-      _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 7);
+      _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 10);
       c1_thetad = 0.0;
     } else {
       guard1 = TRUE;
@@ -316,7 +316,7 @@ static void sf_c1_canudas_goal2(SFc1_canudas_goal2InstanceStruct *chartInstance)
   if (guard1 == TRUE) {
     CV_EML_MCDC(0, 1, 0, FALSE);
     CV_EML_IF(0, 1, 0, FALSE);
-    _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 9);
+    _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 12);
     c1_c_y = c1_qe[1];
     c1_e_x = c1_qe[0];
     c1_eml_scalar_eg(chartInstance);
@@ -325,20 +325,20 @@ static void sf_c1_canudas_goal2(SFc1_canudas_goal2InstanceStruct *chartInstance)
     c1_b_r = muDoubleScalarAtan2(c1_d_y, c1_f_x);
     c1_b = c1_b_r;
     c1_thetad = 2.0 * c1_b;
-    _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 10);
+    _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 13);
     c1_thetad = c1_limit_angle(chartInstance, c1_thetad);
   }
 
-  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 13);
+  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 16);
   c1_eps(chartInstance);
   c1_g_x = c1_qe[1];
   c1_h_x = c1_g_x;
   c1_e_y = muDoubleScalarAbs(c1_h_x);
   if (CV_EML_IF(0, 1, 1, c1_e_y < 2.2204460492503131E-16)) {
-    _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 14);
+    _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 17);
     c1_r = 0.0;
   } else {
-    _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 16);
+    _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 19);
     c1_b_b = c1_qe[1];
     c1_f_y = 2.0 * c1_b_b;
     c1_A = c1_mpower(chartInstance, c1_qe[0]) + c1_mpower(chartInstance, c1_qe[1]);
@@ -350,18 +350,18 @@ static void sf_c1_canudas_goal2(SFc1_canudas_goal2InstanceStruct *chartInstance)
     c1_r = c1_j_x / c1_h_y;
   }
 
-  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 20);
+  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 23);
   c1_b_a = c1_r;
   c1_c_b = c1_thetad;
   c1_a = c1_b_a * c1_c_b;
-  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 21);
-  c1_alpha = c1_qe[2] - c1_thetad;
-  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 22);
-  c1_alpha = c1_limit_angle(chartInstance, c1_alpha);
   _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 24);
+  c1_alpha = c1_qe[2] - c1_thetad;
+  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 25);
+  c1_alpha = c1_limit_angle(chartInstance, c1_alpha);
+  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, 27);
   c1_z[0] = c1_a;
   c1_z[1] = c1_alpha;
-  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, -24);
+  _SFD_EML_CALL(0U, chartInstance->c1_sfEvent, -27);
   sf_debug_symbol_scope_pop();
   for (c1_i5 = 0; c1_i5 < 2; c1_i5++) {
     (*c1_b_z)[c1_i5] = c1_z[c1_i5];
@@ -937,10 +937,10 @@ static void init_dsm_address_info(SFc1_canudas_goal2InstanceStruct
 /* SFunction Glue Code */
 void sf_c1_canudas_goal2_get_check_sum(mxArray *plhs[])
 {
-  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1716847865U);
-  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(433543459U);
-  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(97617023U);
-  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1356743380U);
+  ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1099256543U);
+  ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(622335446U);
+  ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(775332962U);
+  ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(4016994954U);
 }
 
 mxArray *sf_c1_canudas_goal2_get_autoinheritance_info(void)
@@ -952,7 +952,7 @@ mxArray *sf_c1_canudas_goal2_get_autoinheritance_info(void)
     autoinheritanceFields);
 
   {
-    mxArray *mxChecksum = mxCreateString("UJxyS46awdfnedoQPA77SB");
+    mxArray *mxChecksum = mxCreateString("yUIpCTl5121oXhNVAPGnJD");
     mxSetField(mxAutoinheritanceInfo,0,"checksum",mxChecksum);
   }
 
@@ -1131,18 +1131,18 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
         /* Initialization of MATLAB Function Model Coverage */
         _SFD_CV_INIT_EML(0,1,1,2,0,0,0,0,0,2,1);
-        _SFD_CV_INIT_EML_FCN(0,0,"eML_blk_kernel",0,-1,511);
-        _SFD_CV_INIT_EML_IF(0,1,0,192,233,250,327);
-        _SFD_CV_INIT_EML_IF(0,1,1,329,347,359,406);
+        _SFD_CV_INIT_EML_FCN(0,0,"eML_blk_kernel",0,-1,705);
+        _SFD_CV_INIT_EML_IF(0,1,0,386,427,444,521);
+        _SFD_CV_INIT_EML_IF(0,1,1,523,541,553,600);
 
         {
-          static int condStart[] = { 196, 216 };
+          static int condStart[] = { 390, 410 };
 
-          static int condEnd[] = { 210, 231 };
+          static int condEnd[] = { 404, 425 };
 
           static int pfixExpr[] = { 0, 1, -3 };
 
-          _SFD_CV_INIT_EML_MCDC(0,1,0,195,232,2,0,&(condStart[0]),&(condEnd[0]),
+          _SFD_CV_INIT_EML_MCDC(0,1,0,389,426,2,0,&(condStart[0]),&(condEnd[0]),
                                 3,&(pfixExpr[0]));
         }
 
@@ -1203,7 +1203,7 @@ static void chart_debug_initialization(SimStruct *S, unsigned int
 
 static const char* sf_get_instance_specialization()
 {
-  return "wPBpjLBiALXFy7Bfmmd9pE";
+  return "6CqRNAWYqz4PH1ECIUaatG";
 }
 
 static void sf_opaque_initialize_c1_canudas_goal2(void *chartInstanceVar)
@@ -1360,10 +1360,10 @@ static void mdlSetWorkWidths_c1_canudas_goal2(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(2082540997U));
-  ssSetChecksum1(S,(1156103386U));
-  ssSetChecksum2(S,(1485192632U));
-  ssSetChecksum3(S,(2306460538U));
+  ssSetChecksum0(S,(2030378826U));
+  ssSetChecksum1(S,(3867881974U));
+  ssSetChecksum2(S,(2092510126U));
+  ssSetChecksum3(S,(3972586124U));
   ssSetmdlDerivatives(S, NULL);
   ssSetExplicitFCSSCtrl(S,1);
   ssSupportsMultipleExecInstances(S,1);

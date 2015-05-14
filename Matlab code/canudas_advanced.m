@@ -6,15 +6,15 @@ close all;
 clc
 
 %% Paramaters
-plotvar = true;
+plotvar = false;
 
 K1 = 1.35;
 K2 = 4.6;
 
 dt = 0.05;              % sample time [s]
 
-q0 = [0; 0; 0];        % initial state [x, y, theta], theta in ]-pi, pi]
-qr = [1; 1; pi];       % goal state [x, y, theta]
+q0 = [0; 0; 0 ];        % initial state [x, y, theta], theta in ]-pi, pi]
+qr = [1; 1; 0];       % goal state [x, y, theta]
 
 goal_color = [1,0,0; 0,0,0];
 robot_color = [0,0,1; 0,0,0];
@@ -138,11 +138,11 @@ while((abs(qe(1))>eps1) || (abs(qe(2))>eps1) || (abs(qe(3))>eps2))
     B = J(qe(1), qe(2), thetad)*T(qr(3))*G(q(3));
     
     % Compute commands
-    if((r==0) && (thetad==0) && (timer==0))
-        v = 1;
-    else
+%     if((r==0) && (thetad==0) && (timer==0))
+%         v = 1;
+%     else
         v = -K1*B(1,1)*a;
-    end
+%     end
     w = -B(2,1)*v - K2*alpha;
     
     % Compute next position
