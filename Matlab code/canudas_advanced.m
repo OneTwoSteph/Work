@@ -125,13 +125,13 @@ while((abs(qe(1))>eps1) || (abs(qe(2))>eps1) || (abs(qe(3))>eps2))
         thetad = limit_angle(thetad);
     end
     
-    if(abs(qe(2))<eps)
-        r = 0;
-    else
-        r = (qe(1)^2 + qe(2)^2)/(2*qe(2));
-    end
+    r = (qe(1)^2 + qe(2)^2)/(2*qe(2));
 
-    a = r * thetad;
+    if(abs(qe(2))<eps)
+        a = qe(3);
+    else
+        a = r * thetad;
+    end
     alpha = qe(3)-thetad;
     alpha = limit_angle(alpha);
     

@@ -12,7 +12,6 @@ K2 = 4.6;
 dt = 0.05;              % sample time [s]
 
 q0 = [0; 0; 0];         % initial state [x, y, theta]
-qr = [10; 10; pi/4];    % goal state [x, y, theta]
 
 goal_color = [1,0,0; 0,0,0];
 robot_color = [0,0,1; 0,0,0];
@@ -40,6 +39,17 @@ G = @(x) [cos(x), 0;...
 J = @(x, y, z) [z*x/y - 1, z*(1-x^2/y^2)/2 + x/y, 0;...
                 2*y/(1+y^2/x^2)/x^2, -2/(1+y^2/x^2)/x, 1];
 
+%% Path parameters
+% Parameters to choose
+p = [1, 4, 0; 4, 4, 0; 5, 3, -pi/2; 5, 1, -pi/2]';
+vel = [0.2; 0.3; 0.3];
+
+% Distance arcs between point
+d = zeros(size(p, 2)-1, 1);
+for i=1:(size(p, 2)-1)
+    [d(i), prout] = compute_a_alpha(T, p(:,i), p(:,i+1), eps);
+end
+
 %% Simulation loop
 % Initialize figure
 fig = figure();
@@ -60,28 +70,8 @@ while((abs(qe(1))>eps1) || (abs(qe(2))>eps1) || (abs(qe(3))>eps2))
     % Draw robot's pose/state
     state_arrow(q, 1, fig, robot_color);
 
-    % Compute error state
-    qe = T(qr(3))*(q-qr);
-
-    % Compute initial z state
-    % there are some tests to ensure continuity (inf points)
-    % atan2 certifiates that the angle stazs in [-pi, pi]
-    if((abs(qe(1))<eps) && (abs(qe(2))==eps))
-        thetad = 0;
-    else
-        thetad = 2*atan2(qe(2),qe(1));
-        thetad = limit_angle(thetad);
-    end
-    
-    r = (qe(1)^2 + qe(2)^2)/(2*qe(2));
-
-    if(abs(qe(2))<eps)
-        a = qe(3);
-    else
-        a = r * thetad;
-    end
-    alpha = qe(3)-thetad;
-    alpha = limit_angle(alpha);
+    % Compute a and alpha (z vector)
+    [a, alpha] = compute_a_alpha(T, q, qr, eps);
     
     % Compute commands
     B = J(qe(1), qe(2), thetad)*T(qr(3))*G(q(3));

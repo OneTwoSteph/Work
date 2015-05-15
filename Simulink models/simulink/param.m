@@ -24,8 +24,8 @@ r = 0.0205;                         % wheel radius [m]
 ticks = 2764;                       % number of ticks per wheel revolution [-]
 
 % Controller
-k1 = 1.35/5;
-k2 = 4.6/5;
+k1 = 1.35/4;
+k2 = 4.6/4;
 
 % Tolerances
 eps = 1e-6;                         % tolerance on small position [m]
