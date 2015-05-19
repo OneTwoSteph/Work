@@ -1,34 +1,48 @@
 /*
- Software serial communication for motor command.
+ Alternative software serial communication for motor 
+ command.
+ 
+ The alternative software serial communication allows to 
+ send and receive at the same time which is not the case 
+ with the software serial communication.
+ 
+ Make sure you have the additionnal library installed.
  
  Receives wheel motor commands from the hardware serial and
  sends them to software serial which represents wheel motors.
  
- RX = receiving pin
- TX = transmitting pin
+ The pins cannot be chosen, the correct pins for each time of
+ board need to be checked out on the librairies website.
+ In the case of Arduino Uno (also ok for Mini Pro):
+ RX = receiving pin = pin 8 (connect to TX of motors -> yellow)
+ TX = transmitting pin = pin 9 (connect to RX of motors -> green)
  
- The circuit:
- * RX is digital pin 10 (connect to TX of motors)
- * TX is digital pin 11 (connect to RX of motors)
- 
- String format to send to hardware communication port :
+ String format to send motor commands to hardware
+ communication port :
  leftsign leftspeed rightsign rightspeed 
+ 
+ !!!  The sign of the speeds has to be given before their value.
  
  The first character has to be anything but "@".
  The sign of the speeds has to be given before their value.
  */
 
+
+/**** Libraries ****/
 // Library for serial communication (UART) which allows to replicate the functionality
-// of UART of pin 0 and 1 on other pins of the board to allowa communication with them.
+// of UART of pin 0 and 1 on other pins of the board to allow communication with them.
+// The alternate library allows to receive and transmit at the same time.
 #include <AltSoftSerial.h>    
 
-// Global variables and parameters
-int ticks = 663;                          // number of ticks per wheel revolution                         
+
+/**** Global variables and parameters ****/
+int ticks = 480;                          // number of ticks per wheel revolution                         
 int heartBeatChar = '@';
 
-AltSoftSerial mySerial;                  // SoftwareSerial object for motors: RX, TX
+AltSoftSerial mySerial;                   // SoftwareSerial object for motors: RX, TX
 
-// Initialization function
+
+/**** Initialization function ****/
 void setup() {
   // Make the program wait 2s
   delay(2000);
@@ -71,6 +85,8 @@ void setup() {
   delay(1000);
 }
 
+
+/**** Loop function ***/
 void loop() {
   // Only if hardware serial port sends bytes (received commands)
   if(Serial.available())

@@ -1,9 +1,18 @@
-void setup() {
-  // put your setup code here, to run once:
+/*
+ Stop sketch for robot's motors
+ 
+ Just does nothing.
+ 
+ Stephanie Amati, April 2015 (really hard coding)
+*/
 
+
+/**** Initialization function ****/
+void setup() {
+ 
 }
 
+/**** Loop function ***/
 void loop() {
-  // put your main code here, to run repeatedly:
-
+ 
 }

@@ -1,12 +1,22 @@
 /*
- Software serial communication for odometry communication.
+ Alternative software serial communication for odometry.
+ 
+ The alternative software serial communication allows to 
+ send and receive at the same time which is not the case 
+ with the software serial communication. This is important
+ for the Kangaroo commands needed for odometry.
+ 
+ Make sure you have the additionnal library installed.
  
  Updates odometry every dt by sending request to motor and
  receiving the position of the wheels (16 bits encoder ticks
  counter)
  
- RX is digital pin 10 (connect to TX of motors)
- TX is digital pin 11 (connect to RX of motors)
+ The pins cannot be chosen, the correct pins for each time of
+ board need to be checked out on the librairies website.
+ In the case of Arduino Uno (also ok for Mini Pro):
+ RX = receiving pin = pin 8 (connect to TX of motors -> yellow)
+ TX = transmitting pin = pin 9 (connect to RX of motors -> green)
  
  String format of odometry received :
  units/ticks (1000 = value) time leftincrement rightincrement
@@ -16,14 +26,14 @@
 /**** Libraries ****/
 // Library for serial communication (UART) which allows to replicate the functionality
 // of UART of pin 0 and 1 on other pins of the board to allowa communication with them.
-#include <SoftwareSerial.h>
+#include <AltSoftSerial.h>
 
 /**** Global variables and parameters ****/
-SoftwareSerial mySerial(10, 11);            // SoftwareSerial object for motors: RX, TX
+AltSoftSerial mySerial(10, 11);            // SoftwareSerial object for motors: RX, TX
 
-// General
-int ticks = 480;                            // number of ticks per wheel revolution     
-int midBoundary = 16384;                    // mid number for a 16 bits counter
+// General   
+int ticks = 480;                           // number of ticks per wheel revolution                        
+int midBoundary = 16384;                   // mid number of a 16 bits counter
 int counter = 0;
 
 // Odometry

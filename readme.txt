@@ -21,6 +21,47 @@ After an incident with the robot (boards burned), I dedicated my time to find ot
 The next section will detail what files and documentation you can find in this folder regarding my work. The code should have enough comments for you to understand it. If it is not the case, I invite you to contact me at stephanie.amati@gmail.com.
 
 
-FILES
+NOTE
 
-Literature : contains all the literature I found interesting for the project.
+All the simulation on simulink using Sim.I.Am can run only on Matlab R2012b because Sim.I.Am was created on this version and causes errors on later versions.
+
+
+FOLDER AND FILES
+
+Arduino sketches: 
+Contains sketches for serial communication with the robot's motors that is to say to send commands to them and to receive the values of their encoders. 
+
+The motors of the robot are controlled with a special board called Sabertooth. A second board was added on top of Sabertooth called Kangaroo which converts simple position or speed commands to commands that are "readable" by Sabertooth. The sketches of this folder are for an Arduino connected to the Kangaroo board. The documentation of those boards can be found in the folder "Robot doc".
+
+Here is the list of sketches contained in the folder:
+	- commands: sketch to command motor speeds through the terminal;
+	- commands_altsofserial: same as commands but using another serial communcation class (Alternative Software Serial, see below);
+	- kangaroo: sketch combining the sketches commands and odometry (kangaroo is the name of the board preceding the motor board, see documentation for more informations);
+	- kangaroo_matlab: beginning of a sketch which would be able to communicate with the Matlab Simulink models via bluetooth but unfinished and untested;
+	- libraries: contains an Arduino library to add to be able to compile the Arduino sketches. In fact, another class was used for serial communication, instead of the built in "Software Serial", which is named "Alternative Software Serial" (https://www.pjrc.com/teensy/td_libs_AltSoftSerial.html). The library should maybe be reinstalled from the Arduino software to work correctly, that can be done with the AltSoftSerial.zip that is the same folder;
+	- nothing: does nothing, allows to stop the motors while working on other sketches;
+	- odometry: sketch computing the robot's odometry by requesting the motors enconders values;
+	- odometry_artsofserial: same as odometry sketch but using Alternative Software Serial.
+
+One important parameter in all the sketches is the number of ticks per revolution of the motors encoders. The encoders have a total of 16 counts per revolution (two channels A and B and only up or down edge counting). The motors are equipped with a gear allowing to enhance the resolution of the encoders since the ratio is 30:1. This means that the number of ticks per motor revolution is equal to 480.
+
+Be aware that this number of ticks represent one revolution of the motors and not one revolution of the robot's wheels since there is an additional gear on the robot of ratio more or less 2.5:1 (to confirm).
+
+The baud rate is currently set to 9600 in the motor boards but needs to be enhanced !
+
+MIGUEL_RUIZ: 
+All files from Miguel Ruiz's work (untouched), just in case. There is also a README in this folder.
+
+Literature : 
+Contains all the literature I found interesting for the project.
+
+Matlab bluetooth:
+
+Matlab path following:
+
+
+Miguel Matlab:
+Contains Miguel's Matlab code with additional comments and slight changes. 
+
+Robot doc:
+Contains documentation about the Kangaroo and Sabertooth boards of the robot (used for the Arduino sketches).

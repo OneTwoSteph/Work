@@ -4,18 +4,14 @@
  Receives wheel motor commands from the hardware serial and
  sends them to software serial which represents wheel motors.
  
- RX = receiving pin
- TX = transmitting pin
+ RX is digital pin 10 (connect to TX of motors)
+ TX is digital pin 11 (connect to RX of motors)
  
- The circuit:
- * RX is digital pin 10 (connect to TX of motors)
- * TX is digital pin 11 (connect to RX of motors)
- 
- String format to send to hardware communication port :
+ String format to send motor commands to hardware
+ communication port :
  leftsign leftspeed rightsign rightspeed 
  
- The first character has to be anything but "@".
- The sign of the speeds has to be given before their value.
+ !!!  The sign of the speeds has to be given before their value.
  */
 
 // Library for serial communication (UART) which allows to replicate the functionality
@@ -23,7 +19,7 @@
 #include <SoftwareSerial.h>    
 
 // Global variables and parameters
-int ticks = 663;                          // number of ticks per wheel revolution                         
+int ticks = 480;                          // number of ticks per wheel revolution                         
 int heartBeatChar = '@';
 
 SoftwareSerial mySerial(10, 11);          // SoftwareSerial object for motors: RX, TX
