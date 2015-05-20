@@ -1,4 +1,5 @@
-% CANUDAS Simulation of control law developped by Canudas
+% CANUDAS_PATH Simulation of control law developped by Canudas to follow
+% paths given by a sequence of points.
 %
 % Stephanie Amati, May 2015
 

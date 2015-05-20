@@ -1,5 +1,18 @@
 function [a, alpha] = compute_a_alpha(T, q, qr, eps)
-% COMPUTE_A_ALPHA
+% COMPUTE_A_ALPHA Computes the values a and alpha from the Canudas
+% algorithm.
+% 
+% [a, alpha] = compute_a_alpha(T, q, qr, eps)
+%
+% Inputs: - T = T matrix of the algorithm
+%         - q = robot's pose in [m] and [rad]
+%         - qr = goal pose in [m] and [rad]
+%         - esp = sjmallest distance error [m]
+%
+% Outputs:  - a = arc of circle from robot to goal point [m]
+%           - alpha = angle between world x axis and tangent line to arc of
+%           circle from robot to goal point, going through the goal point
+%           [rad]
 %
 % Stephanie Amati, May 2015
 

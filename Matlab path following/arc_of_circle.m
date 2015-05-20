@@ -1,5 +1,16 @@
 function arc_of_circle(q, qe, r, color, fig, subinfo)
-% ARC_OF_CIRCLE Drows the arc of circle defined by Canudas
+% ARC_OF_CIRCLE Drows the arc of circle defined by Canudas between the
+% robot and the goal pose.
+%
+% arc_of_circle(q, qe, r, color, fig, subinfo)
+%
+% Inputs: - q = robot's pose in [m] and [rad]
+%         - qr = goal pose in [m] and [rad]
+%         - r = radius of the arc of circle [m]
+%         - color = color of the circle indicating if a is positive or
+%         negative (a is a variable of the Canudas algorithm)
+%         - fig = handle of the figure on which to plot
+%         - subinfo = vector with subplot info if there is one
 %
 % Stephanie Amati, May 201
 

@@ -1,4 +1,7 @@
-% CANUDAS Simulation of control law developped by Canudas
+% CANUDAS_ADVANCED Simulation of control law developped by Canudas to follow
+% paths given by a sequence of points.
+%
+% This version alows to plot several variables of the controller.
 %
 % Stephanie Amati, May 201
 
@@ -8,7 +11,7 @@ close all;
 clc
 
 %% Paramaters
-plotvar = false;
+plotvar = yes;
 
 K1 = 1.35;
 K2 = 4.6;

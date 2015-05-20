@@ -1,6 +1,11 @@
 % DYNAMICS_MODEL Implementation of a differential wheeled robot's dynamics
 % model.
 %
+% The model was based on "Dynamic Modelling of Differential-Drive
+% Mobile Robots using Lagrange and Newton-Euler Methodologies: A Unified
+% Framework" by R Hatab and "Analysis of a Differential Drive Vehicle" by
+% M. Selgelid and J. Oakley.
+%
 % Stephanie Amati, April 2015
 
 %% Clear

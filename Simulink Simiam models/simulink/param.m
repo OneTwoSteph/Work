@@ -8,10 +8,10 @@ clear all;
 close all;
 clc;
 
-% Robots initial position
-xi = 1;                             % x coordinate [m]
-yi = 1;                             % y coordinate [m]
-thetai = 0;                         % theta angle [rad]
+% Robot's initial position
+xi = 0;                             % x coordinate [m]
+yi = 0;                             % y coordinate [m]
+thetai = 0;                      % theta angle [rad]
 
 % Goal position
 xr = 0;                             % x coordinate [m]

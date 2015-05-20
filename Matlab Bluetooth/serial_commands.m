@@ -1,4 +1,5 @@
-% SERIAL_COMMANDS
+% SERIAL_COMMANDS Contains the main serial functions to communicate
+% with a device by serial communicaton.
 
 %% See list of connected devices
 devices = instrhwinfo('Serial');

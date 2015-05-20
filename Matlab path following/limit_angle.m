@@ -4,9 +4,9 @@ function angle = limit_angle(angle)
 %
 % angle = limit_angle(angle)
 %
-% Input:    - angle = angle [rad]
+% Input: - angle = angle [rad]
 %
-% Outut:    - angle = angle in ]-pi, pi] [rad]
+% Output: - angle = angle in ]-pi, pi] [rad]
 %
 % Stephanie Amati, May 2015
 

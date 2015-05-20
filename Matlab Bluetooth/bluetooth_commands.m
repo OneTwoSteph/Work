@@ -1,4 +1,5 @@
-% BLUETOOTH_COMMANDS Contains the main bluetooth functions
+% BLUETOOTH_COMMANDS Contains the main bluetooth functions to communicate
+% with a device by bluetooth.
 
 %% See list of connected devices
 bdevices = instrhwinfo('Bluetooth');

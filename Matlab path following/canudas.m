@@ -1,6 +1,10 @@
-% CANUDAS Simulation of control law developped by Canudas
+% CANUDAS Simulation of control law developped by Canudas to follow
+% paths given by a sequence of points.
 %
-% Stephanie Amati, May 201
+% Based on the algorithm described in "Exponential Control Law for A
+% Mobile Robot - Extension to Path following" of Canudas.
+%
+% Stephanie Amati, May 2015
 
 %% Cleaning
 clear all;

@@ -383,7 +383,7 @@ static void init_script_number_translation(uint32_T c1_machineNumber, uint32_T
   c1_chartNumber)
 {
   _SFD_SCRIPT_TRANSLATION(c1_chartNumber, 0U, sf_debug_get_script_id(
-    "C:/Users/samati/Steph/Work/Simulink models/simulink/limit_angle.m"));
+    "C:/Users/samati/Steph/Work/Simulink Simiam models - unclean/simulink/limit_angle.m"));
 }
 
 static const mxArray *c1_sf_marshallOut(void *chartInstanceVoid, void *c1_inData)
@@ -675,13 +675,13 @@ static void c1_info_helper(c1_ResolvedFunctionInfo c1_info[21])
   c1_info[10].name = "limit_angle";
   c1_info[10].dominantType = "double";
   c1_info[10].resolved =
-    "[E]C:/Users/samati/Steph/Work/Simulink models/simulink/limit_angle.m";
+    "[E]C:/Users/samati/Steph/Work/Simulink Simiam models - unclean/simulink/limit_angle.m";
   c1_info[10].fileTimeLo = 1430997605U;
   c1_info[10].fileTimeHi = 0U;
   c1_info[10].mFileTimeLo = 0U;
   c1_info[10].mFileTimeHi = 0U;
   c1_info[11].context =
-    "[E]C:/Users/samati/Steph/Work/Simulink models/simulink/limit_angle.m";
+    "[E]C:/Users/samati/Steph/Work/Simulink Simiam models - unclean/simulink/limit_angle.m";
   c1_info[11].name = "mtimes";
   c1_info[11].dominantType = "double";
   c1_info[11].resolved =
@@ -1360,10 +1360,10 @@ static void mdlSetWorkWidths_c1_canudas_goal2(SimStruct *S)
   }
 
   ssSetOptions(S,ssGetOptions(S)|SS_OPTION_WORKS_WITH_CODE_REUSE);
-  ssSetChecksum0(S,(2030378826U));
-  ssSetChecksum1(S,(3867881974U));
-  ssSetChecksum2(S,(2092510126U));
-  ssSetChecksum3(S,(3972586124U));
+  ssSetChecksum0(S,(2523536550U));
+  ssSetChecksum1(S,(4230217915U));
+  ssSetChecksum2(S,(59786458U));
+  ssSetChecksum3(S,(1365144267U));
   ssSetmdlDerivatives(S, NULL);
   ssSetExplicitFCSSCtrl(S,1);
   ssSupportsMultipleExecInstances(S,1);

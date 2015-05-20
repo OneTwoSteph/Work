@@ -1,4 +1,8 @@
-% CANUDAS Simulation of control law developped by Canudas
+% CANUDAS_ARC Simulation of control law developped by Canudas to reach a goal
+% pose. 
+%
+% This version just draws the initial arc of circle between robot and goal
+% pose for different situations.
 %
 % Stephanie Amati, May 201
 
